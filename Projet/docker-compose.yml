@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   minetest-server:
-    build: . 
+    image: minetest-server-image 
     deploy:
       replicas: 3  
       resources:
@@ -10,11 +10,11 @@ services:
           cpus: '0.5'
           memory: 500M
       placement:
-        constraints: [node.role == worker]  
+        constraints: [node.role == worker]  # Exécuter sur des nœuds de travail
     ports:
-      - "3000:3000"
+      - "3000:3000"  # Exposer le port 30000 pour les connexions multijoueur
     volumes:
-      - minetest-world:/minetest/worlds 
+      - minetest-world:/minetest/worlds  # Volume pour persister les mondes
     environment:
       - MINETEST_HOME=/minetest
     networks:
