@@ -20,7 +20,7 @@ Projet pour les portes ouvertes de l'ETML où l'on utilise Docker Swarm pour con
    - Initialise Docker Swarm pour transformer votre machine en manager. Cette commande est nécessaire pour gérer plusieurs nœuds.
 
 4. **Déploiement du stack Docker Swarm** :
-   - `docker stack deploy -c docker-stack.yml minetest`
+   - `docker stack deploy -c docker-compose.yml minetest`
    - Utilise Docker Swarm pour déployer le service Minetest sur votre cluster Docker. Le fichier `docker-stack.yml` contient la définition des services, réplicas, et volumes.
 
 5. **Vérification du service** :
