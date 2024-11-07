@@ -2,9 +2,9 @@ version: '3.8'
 
 services:
   minetest-server:
-    image: minetest-server-image 
+    build: .  # Utilise le Dockerfile local pour construire l'image
     deploy:
-      replicas: 3  
+      replicas: 3  # Nombre d'instances du serveur Minetest
       resources:
         limits:
           cpus: '0.5'
@@ -12,7 +12,7 @@ services:
       placement:
         constraints: [node.role == worker]  # Exécuter sur des nœuds de travail
     ports:
-      - "3000:3000"  # Exposer le port 30000 pour les connexions multijoueur
+      - "30001:30000"  # Exposer le port 30001 pour les connexions (modifié pour éviter les conflits)
     volumes:
       - minetest-world:/minetest/worlds  # Volume pour persister les mondes
     environment:
