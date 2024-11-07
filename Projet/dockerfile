@@ -1,11 +1,19 @@
-FROM minetest/minetest:5.6.0
+# Utiliser l'image officielle Debian comme base
+FROM debian:latest
 
-# Ajouter un script de sauvegarde personnalisé
-COPY backup.sh /usr/local/bin/backup.sh
-RUN chmod +x /usr/local/bin/backup.sh
+# Mettre à jour les paquets et installer Minetest
+RUN apt-get update && \
+    apt-get install -y minetest-server && \
+    rm -rf /var/lib/apt/lists/*
 
-# Créer un cron job pour effectuer la sauvegarde tous les jours à 00h00
-RUN echo "0 0 * * * /usr/local/bin/backup.sh" > /etc/cron.d/minetest-backup
+# Définir le répertoire de travail
+WORKDIR /minetest
 
-# Exposer le port pour Minetest
+# Exposer le port utilisé par Minetest pour les connexions multijoueur
 EXPOSE 30000
+
+# Volume pour persister les données du serveur (mondes, configurations)
+VOLUME /minetest/worlds
+
+# Démarrer le serveur Minetest avec la configuration par défaut
+CMD ["minetestserver", "--world", "/minetest/worlds/default"]

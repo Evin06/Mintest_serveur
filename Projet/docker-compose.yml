@@ -2,39 +2,28 @@ version: '3.8'
 
 services:
   minetest-server:
-    image: minetest/minetest:5.6.0  
+    image: minetest/minetest:latest  # Utilise l'image officielle Minetest
     deploy:
-      replicas: 3  
+      replicas: 3  # Nombre d'instances du serveur Minetest
       resources:
         limits:
-          cpus: '1.0'  
-          memory: 1G  
-        reservations:
-          cpus: '0.5'  
-          memory: 512M  
+          cpus: '0.5'
+          memory: 500M
       placement:
-        constraints: [node.role == worker]
-      restart_policy:
-        condition: on-failure 
-      labels:
-        - "minetest=true"  
+        constraints: [node.role == worker]  # Exécuter sur des nœuds de travail
     ports:
-      - "30001:30000"  
+      - "30001:30000"  # Exposer le port 30001 pour les connexions (modifié pour éviter les conflits)
     volumes:
       - minetest-world:/minetest/worlds  # Volume pour persister les mondes
-      - minetest-backups:/minetest/backups  # Volume pour les sauvegardes
     environment:
       - MINETEST_HOME=/minetest
-      - MINETEST_BACKUP_INTERVAL=1440  # Effectuer une sauvegarde tous les jours (en minutes)
     networks:
       - minetest-net
 
 volumes:
   minetest-world:
-    driver: local  
-  minetest-backups:
-    driver: local 
+    driver: local
 
 networks:
   minetest-net:
-    driver: overlay  # Réseau Overlay pour Swarm, permet une communication entre nœuds du Swarm
+    driver: overlay
