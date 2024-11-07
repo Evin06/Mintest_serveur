@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  minetest-server:
+    build: .  
+      replicas: 3  
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 500M
+      placement:
+        constraints: [node.role == worker]  
+    ports:
+      - "3000:3000"  
+    volumes:
+      - minetest-world:/minetest/worlds 
+    environment:
+      - MINETEST_HOME=/minetest
+    networks:
+      - minetest-net
+
+volumes:
+  minetest-world:
+    driver: local
+
+networks:
+  minetest-net:
+    driver: overlay
