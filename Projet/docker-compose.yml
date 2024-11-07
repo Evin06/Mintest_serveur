@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  minetest-server:
+    build: .
+    ports:
+      - "30000:30000"
+    volumes:
+      - minetest-world:/minetest/worlds
+    environment:
+      - MINETEST_HOME=/minetest
+    deploy:
+      replicas: 3  # Lancer 3 réplicats du serveur
+    networks:
+      - minetest-net
+
+volumes:
+  minetest-world:
+    driver: local
+
+networks:
+  minetest-net:
+    driver: bridge

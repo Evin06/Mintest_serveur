@@ -8,11 +8,11 @@ Projet pour les portes ouvertes de l'ETML où l'on utilise Docker Swarm pour con
 ### Explication des commandes 
 
 1. **Clonage du projet** : 
-   - `git clone https://github.com/Evin06/serveur-minetest-docker-swarm.git`
+   - `git clone https://github.com/Evin06/Mintest_serveur.git`
    - Cette commande clone le projet sur votre machine.
 
 2. **Construction de l'image Docker** :
-   - `docker build -t minetest-server-image .`
+   - `docker build -t minetestsrv .`
    - Cela crée une image Docker à partir du `Dockerfile` que vous avez dans votre projet.
 
 3. **Initialisation de Docker Swarm** :

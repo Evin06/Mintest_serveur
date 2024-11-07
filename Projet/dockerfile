@@ -1,0 +1,19 @@
+# Utiliser l'image officielle Debian comme base
+FROM debian:latest
+
+# Mettre à jour les paquets et installer Minetest
+RUN apt-get update && \
+    apt-get install -y minetest-server && \
+    rm -rf /var/lib/apt/lists/*
+
+# Définir le répertoire de travail
+WORKDIR /minetest
+
+# Exposer le port utilisé par Minetest pour les connexions multijoueur
+EXPOSE 30000
+
+# Volume pour persister les données du serveur (mondes, configurations)
+VOLUME /minetest/worlds
+
+# Démarrer le serveur Minetest avec la configuration par défaut
+CMD ["minetestserver", "--world", "/minetest/worlds/default"]
