@@ -2,10 +2,7 @@ version: '3.8'
 
 services:
   minetest-server:
-    build:
-      context: .               
-      dockerfile: Dockerfile   
-    image: minetest-server-image:latest  # Le nom de l'image une fois construite
+    image: minetest/minetest:latest  # Utilise l'image officielle Minetest
     deploy:
       replicas: 3  # Nombre d'instances du serveur Minetest
       resources:
