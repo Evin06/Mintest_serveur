@@ -10,4 +10,3 @@ EXPOSE 3000
 VOLUME /minetest/worlds
 
 CMD ["minetestserver", "--world", "/minetest/worlds/default"]
-#
