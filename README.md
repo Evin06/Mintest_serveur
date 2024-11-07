@@ -5,7 +5,7 @@ Projet pour les portes ouvertes de l'ETML où l'on utilise Docker Swarm pour con
 
 ---
 
-### Explication des commandes dans le README
+### Explication des commandes 
 
 1. **Clonage du projet** : 
    - `git clone https://github.com/Evin06/serveur-minetest-docker-swarm.git`
