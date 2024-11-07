@@ -2,21 +2,15 @@ version: '3.8'
 
 services:
   minetest-server:
-    image: minetest/minetest:latest  # Utilise l'image officielle Minetest
-    deploy:
-      replicas: 3  # Nombre d'instances du serveur Minetest
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 500M
-      placement:
-        constraints: [node.role == worker]  # Exécuter sur des nœuds de travail
+    build: .
     ports:
-      - "30001:30000"  # Exposer le port 30001 pour les connexions (modifié pour éviter les conflits)
+      - "30000:30000"
     volumes:
-      - minetest-world:/minetest/worlds  # Volume pour persister les mondes
+      - minetest-world:/minetest/worlds
     environment:
       - MINETEST_HOME=/minetest
+    deploy:
+      replicas: 3  # Lancer 3 réplicats du serveur
     networks:
       - minetest-net
 
@@ -26,4 +20,4 @@ volumes:
 
 networks:
   minetest-net:
-    driver: overlay
+    driver: bridge
