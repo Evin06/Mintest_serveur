@@ -1,23 +1,14 @@
-version: '3.8'
-
 services:
-  minetest-server:
-    build: .
-    ports:
-      - "30000:30000"
-    volumes:
-      - minetest-world:/minetest/worlds
+  minetest:
+    image: lscr.io/linuxserver/minetest:latest
+    container_name: minetest
     environment:
-      - MINETEST_HOME=/minetest
-    deploy:
-      replicas: 3  # Lancer 3 réplicats du serveur
-    networks:
-      - minetest-net
-
-volumes:
-  minetest-world:
-    driver: local
-
-networks:
-  minetest-net:
-    driver: bridge
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - "CLI_ARGS=--gameid minetest_game" 
+    volumes:
+      - /path/to/minetest/data:/config/.minetest
+    ports:
+      - 30000:30000/udp
+    restart: unless-stopped
