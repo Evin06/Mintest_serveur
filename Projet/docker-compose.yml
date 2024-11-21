@@ -11,4 +11,7 @@ services:
       - /path/to/minetest/data:/config/.minetest
     ports:
       - 30000:30000/udp
-    restart: unless-stopped
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
