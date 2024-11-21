@@ -6,12 +6,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - "CLI_ARGS=--gameid minetest_game" 
+      - "CLI_ARGS=--gameid minetest_game"
     volumes:
-      - /path/to/minetest/data:/config/.minetest
+      - ./minetest_data:/config/.minetest
     ports:
       - 30000:30000/udp
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
+    restart: unless-stopped
