@@ -1,45 +1,39 @@
-version: '3.8'
-
 services:
-  survival:
-    image: minetest-server
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
+  minecraft:
+    image: itzg/minecraft-server
     ports:
-      - "30001:30000"
-    networks:
-      - minetest-net
+      - "24555:24555"
+    environment:
+      EULA: "TRUE"
+      VERSION: "LATEST"
+      TYPE: "VANILLA"
+      MODE: "creative"
+      DIFFICULTY: "peaceful"
+      HARDCORE: "false"
+      PVP: "false"
+      MAX_PLAYERS: "10"
+      MOTD: "Bienvenue sur le serveur Minecraft de l'ETML"
+      # LEVEL: Poudlard
     volumes:
-      - ./games/survival:/data
+      - minecraft_data:/data
+      # - ./map/Poudlard:/data/world
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == worker  # Exécute uniquement sur les nœuds workers
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      - minecraft_network
 
-  creative:
-    image: minetest-server
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
-    ports:
-      - "30002:30000"
-    networks:
-      - minetest-net
-    volumes:
-      - ./games/creative:/data
-
-  ctf:
-    image: minetest-server
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
-    ports:
-      - "30003:30000"
-    networks:
-      - minetest-net
-    volumes:
-      - ./games/ctf:/data
+volumes:
+  minecraft_data:
 
 networks:
-  minetest-net:
-    external: true
+  minecraft_network:
+    driver: overlay
