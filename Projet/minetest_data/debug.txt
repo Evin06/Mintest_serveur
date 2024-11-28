@@ -1,0 +1,12 @@
+
+
+-------------
+  Separator
+-------------
+
+2024-11-28 07:50:52: [Main]: Automatically selecting world at [/config/.minetest/world]
+2024-11-28 07:50:52: [Main]: Using game specified by --gameid on the command line
+2024-11-28 07:50:59: ACTION[Main]: World at [/config/.minetest/world]
+2024-11-28 07:50:59: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
+2024-11-28 07:53:03: [Main]: INFO: signal_handler(): got SIGTERM, shutting down.
+2024-11-28 07:53:03: ACTION[Main]: Server: Shutting down
