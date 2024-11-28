@@ -4,61 +4,9 @@
   Separator
 -------------
 
-2024-11-21 09:50:30: [Main]: Automatically selecting world at [/config/.minetest/world]
-2024-11-21 09:50:30: [Main]: Using game specified by --gameid on the command line
-2024-11-21 09:50:36: ACTION[Main]: World at [/config/.minetest/world]
-2024-11-21 09:50:36: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
-2024-11-21 09:51:38: WARNING[Server]: Server: Maximum lag peaked at 1.04841 (steplen=0.09)
-2024-11-21 09:51:39: ACTION[Server]: Evi21123we [::ffff:172.18.0.1] joins game. List of players: Evi21123we
-2024-11-21 09:51:45: ACTION[Server]: Evi21123we digs default:sand at (-63,4,64)
-2024-11-21 09:51:46: ACTION[Server]: Evi21123we digs default:sand at (-63,4,64)
-2024-11-21 09:51:47: ACTION[Server]: Evi21123we digs default:sand at (-62,4,64)
-2024-11-21 09:51:48: ACTION[Server]: Evi21123we digs default:dirt at (-62,5,64)
-2024-11-21 09:51:54: ACTION[Server]: Evi21123we digs default:sand at (-61,5,64)
-2024-11-21 09:52:02: ACTION[Server]: Evi21123we places node default:dirt at (-65,3,62)
-2024-11-21 09:52:03: ACTION[Server]: Evi21123we activates 
-2024-11-21 09:52:03: ACTION[Server]: Evi21123we activates 
-2024-11-21 09:52:04: ACTION[Server]: Evi21123we places node default:sand at (-65,3,63)
-2024-11-21 09:52:04: ACTION[Server]: Evi21123we right-clicks object 3: LuaEntitySAO "__builtin:falling_node" at (-65,3,63)
-2024-11-21 09:52:04: ACTION[Server]: Evi21123we places node default:sand at (-65,3,63)
-2024-11-21 09:52:06: ACTION[Server]: Evi21123we activates default:sand
-2024-11-21 09:52:06: ACTION[Server]: Evi21123we places node default:sand at (-64,5,62)
-2024-11-21 09:52:07: ACTION[Server]: Evi21123we right-clicks object 5: LuaEntitySAO "__builtin:falling_node" at (-64,5,62)
-2024-11-21 09:52:07: ACTION[Server]: Evi21123we places node default:sand at (-64,5,62)
-2024-11-21 09:52:11: ACTION[Server]: Evi21123we digs default:sand at (-64,3,65)
-2024-11-21 09:52:14: ACTION[Server]: Evi21123we leaves game. List of players: 
-2024-11-21 09:56:47: ACTION[Server]: Evi21123we [::ffff:172.18.0.1] joins game. List of players: Evi21123we
-2024-11-21 09:57:33: ACTION[Server]: Evi21123we leaves game. List of players: 
-2024-11-21 10:02:58: ACTION[Server]: Evi21123we [::ffff:172.18.0.1] joins game. List of players: Evi21123we
-2024-11-21 10:03:26: ACTION[Server]: Evi21123we leaves game. List of players: 
-
-
--------------
-  Separator
--------------
-
-2024-11-21 12:00:14: [Main]: Automatically selecting world at [/config/.minetest/world]
-2024-11-21 12:00:14: [Main]: Using game specified by --gameid on the command line
-2024-11-21 12:00:18: ACTION[Main]: World at [/config/.minetest/world]
-2024-11-21 12:00:18: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
-2024-11-21 14:33:37: WARNING[Server]: Server: Maximum lag peaked at 3.25247 (steplen=0.09)
-
-
--------------
-  Separator
--------------
-
-2024-11-27 12:02:56: [Main]: Automatically selecting world at [/config/.minetest/world]
-2024-11-27 12:02:56: [Main]: Using game specified by --gameid on the command line
-2024-11-27 12:03:05: ACTION[Main]: World at [/config/.minetest/world]
-2024-11-27 12:03:05: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
-
-
--------------
-  Separator
--------------
-
-2024-11-28 07:04:46: [Main]: Automatically selecting world at [/config/.minetest/world]
-2024-11-28 07:04:46: [Main]: Using game specified by --gameid on the command line
-2024-11-28 07:04:58: ACTION[Main]: World at [/config/.minetest/world]
-2024-11-28 07:04:58: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
+2024-11-28 07:50:52: [Main]: Automatically selecting world at [/config/.minetest/world]
+2024-11-28 07:50:52: [Main]: Using game specified by --gameid on the command line
+2024-11-28 07:50:59: ACTION[Main]: World at [/config/.minetest/world]
+2024-11-28 07:50:59: ACTION[Main]: Server for gameid="minetest_game" listening on [::]:30000.
+2024-11-28 07:53:03: [Main]: INFO: signal_handler(): got SIGTERM, shutting down.
+2024-11-28 07:53:03: ACTION[Main]: Server: Shutting down
