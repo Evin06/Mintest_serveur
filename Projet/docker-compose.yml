@@ -3,7 +3,6 @@ version: "3.9"
 services:
   minetest:
     image: lscr.io/linuxserver/minetest:latest
-    container_name: minetest
     environment:
       PUID: 1000
       PGID: 1000
@@ -37,7 +36,6 @@ services:
 
   minetest-worker:
     image: lscr.io/linuxserver/minetest:latest
-    container_name: minetest-worker
     environment:
       PUID: 1000
       PGID: 1000
