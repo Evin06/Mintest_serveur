@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  survival:
+    image: minetest-server
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    ports:
+      - "30001:30000"
+    networks:
+      - minetest-net
+    volumes:
+      - ./games/survival:/data
+
+  creative:
+    image: minetest-server
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    ports:
+      - "30002:30000"
+    networks:
+      - minetest-net
+    volumes:
+      - ./games/creative:/data
+
+  ctf:
+    image: minetest-server
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    ports:
+      - "30003:30000"
+    networks:
+      - minetest-net
+    volumes:
+      - ./games/ctf:/data
+
+networks:
+  minetest-net:
+    external: true
